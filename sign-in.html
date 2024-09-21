@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login or Register with Mobile Number</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: rgb(35, 74, 35);
+        }
+
+        .container {
+            width: 400px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: normal;
+        }
+
+        input[type="text"], input[type="password"], input[type="tel"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            padding: 10px;
+            background-color: rgb(56, 107, 56);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: rgb(35, 74, 35);
+        }
+
+        .toggle-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .toggle-link a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .toggle-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="login-form">
+        <h2>Login/Register</h2>
+        <br><br>
+        <form action="login_process.php" method="POST">
+            <label for="mobile">Login/Register with your mobile number:</label>
+            <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required placeholder="Enter 10 digit mobile number">
+            <input type="submit" value="Login">
+        </form>
+        <div class="toggle-link">
+            <p>Don't have an account? <a href="#" onclick="showRegister()">Register here</a></p>
+        </div>
+    </div>
+
+    <div class="container" id="register-form" style="display: none;">
+        <h2>Register</h2>
+        <form action="register_process.php" method="POST">
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required placeholder="Enter your mobile number
